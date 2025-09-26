@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="relative h-[100vh] flex items-center">
       <div className="absolute inset-0">
         <Image
-          src="/images/home-hero.jpg"
+          src="/images/home-hero-1.jpg"
           alt="Harbor of Hope Hero"
           fill
           priority
@@ -22,7 +22,7 @@ export default function Hero() {
         {/* Text Section */}
         <div className="space-y-6 text-white">
           <h2 className="text-4xl md:text-5xl font-montserrat leading-tight drop-shadow-md">
-            A safe refuge for recovery and rebuilding lives.
+            <span className="text-[#7FE0C8] font-bold">Harbor of Hope:</span> A safe refuge for recovery and rebuilding lives.
           </h2>
           <p className="text-lg text-slate-200 max-w-xl font-open-sans drop-shadow">
             Harbor of Hope offers compassionate, evidence-based care and a
@@ -60,7 +60,7 @@ export default function Hero() {
                hover:scale-105 transition-transform 
                duration-300 ease-out"
             >
-              Donate
+              Support Us
             </Link>
           </div>
 

@@ -15,7 +15,7 @@ export default function Stories() {
               “Harbor of Hope gave me the support and tools I needed to rebuild
               my life — the team listened and walked with me every step.”
             </p>
-            <footer className="mt-4 text-sm text-slate-500">— A. R., Graduate</footer>
+            <footer className="mt-4 text-sm text-slate-500">— Harbor of Hope Graduate</footer>
           </blockquote>
         ))}
       </div>

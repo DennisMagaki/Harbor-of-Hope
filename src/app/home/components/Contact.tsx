@@ -61,8 +61,8 @@ export default function Contact() {
             <div className="flex flex-wrap items-center gap-4 md:col-span-2">
               <button
                 type="submit"
-                className="flex-1 md:flex-none px-6 py-3 rounded-full font-semibold text-white 
-                 bg-gradient-to-r from-[#7FE0C8] to-[#0F4C81] 
+                className="w-full md:w-auto px-6 py-3 rounded-full font-semibold text-[#0F4C81] 
+                 bg-[#7FE0C8] 
                  shadow hover:brightness-95 hover:scale-105 transition"
               >
                 Send

@@ -10,10 +10,9 @@ export default function Navbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10); 
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -22,7 +21,7 @@ export default function Navbar() {
   if (pathname === "/") return null;
 
   const navLinks = [
-    { label: "Programs", href: "/programs" },
+    { label: "Programs", href: "#programs" },
     { label: "Stories", href: "/stories" },
     { label: "Events", href: "/events" },
     { label: "Resources", href: "/resources" },
@@ -32,8 +31,8 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 border-b h-16 sm:h-20 md:h-24 w-full font-open-sans transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/70 backdrop-blur-md border-slate-200 shadow-sm"
+        isScrolled || showMobileMenu
+          ? "bg-white border-slate-200 shadow-sm text-black"
           : "bg-transparent border-transparent text-white"
       }`}
     >
@@ -41,7 +40,11 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <Image
-            src={isScrolled ? "/images/logo.png" : "/images/logo-inverse.png"}
+            src={
+              isScrolled || showMobileMenu
+                ? "/images/logo.png"
+                : "/images/logo-inverse.png"
+            }
             alt="Harbor of Hope logo"
             width={180}
             height={60}
@@ -85,7 +88,11 @@ export default function Navbar() {
           <button
             aria-label="Open menu"
             onClick={() => setShowMobileMenu(!showMobileMenu)}
-            className="p-2 rounded-md border text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0F4C81]"
+            className={`p-2 rounded-md border focus:outline-none focus:ring-2 ${
+              isScrolled || showMobileMenu
+                ? "text-slate-900 focus:ring-[#000000]"
+                : "text-slate-300 focus:ring-[#ffffff]"
+            }`}
           >
             {showMobileMenu ? (
               // Close Icon
@@ -126,23 +133,25 @@ export default function Navbar() {
 
       {/* Mobile menu with scale animation */}
       <div
-        className={`fixed top-16 left-0 right-0 bg-white/70 md:hidden origin-top transition-transform duration-300 ease-in-out ${
-          showMobileMenu
-            ? "scale-y-100 opacity-100"
-            : "scale-y-0 opacity-0 pointer-events-none"
-        }`}
+        className={`absolute top-16 left-0 right-0 md:hidden transition-all duration-500 ease-in-out
+    ${
+      showMobileMenu
+        ? "opacity-100 translate-y-0"
+        : "opacity-0 -translate-y-4 pointer-events-none"
+    }
+  `}
       >
-        <div className="px-4 sm:px-6 py-4 space-y-3">
+        <div className="bg-white shadow-md px-4 sm:px-6 py-6 space-y-3 rounded-b-2xl">
           {navLinks.map(({ label, href, variant }) =>
             variant === "primary" ? (
               <Link
                 key={href}
                 href={href}
                 className="block w-full text-center px-4 py-3 rounded-full 
-                  font-semibold text-white 
-                  bg-gradient-to-r from-[#7FE0C8] to-[#0F4C81] 
-                  transition-all duration-300 ease-out 
-                  hover:brightness-95 active:scale-95"
+            font-semibold text-white 
+            bg-gradient-to-r from-[#7FE0C8] to-[#0F4C81] 
+            transition-all duration-300 ease-out 
+            hover:brightness-95 active:scale-95"
               >
                 {label}
               </Link>
@@ -150,7 +159,7 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className="block text-center py-2 hover:text-[#0F4C81] transition-colors"
+                className="block text-center py-2 hover:text-[#0F4C81] text-black transition-colors"
               >
                 {label}
               </Link>

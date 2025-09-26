@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -37,9 +38,29 @@ export default function About() {
               </p>{" "}
             </div>{" "}
           </div>{" "}
+          <div className="text-center md:text-left">
+            <p className="mt-7 text-slate-600 text-lg font-medium">
+              Interested in working with us?
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block mt-4 px-8 py-3 rounded-full font-semibold text-white 
+      bg-[#0F4C81] 
+      shadow-md hover:shadow-xl hover:scale-105 
+      transition-all duration-300 ease-out"
+            >
+              Join our Community
+            </Link>
+          </div>
         </div>{" "}
         <aside className="p-4 rounded-lg">
-            <Image src={"/images/about.jpg"} alt="About" width={500} height={500} className="rounded-xl"></Image>
+          <Image
+            src={"/images/about.jpg"}
+            alt="About"
+            width={500}
+            height={500}
+            className="rounded-xl"
+          ></Image>
         </aside>{" "}
       </div>{" "}
     </section>
