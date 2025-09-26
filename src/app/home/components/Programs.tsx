@@ -9,7 +9,7 @@ const programs = [
 
 export default function Programs() {
   return (
-    <section id="programs" className="bg-slate-50 py-12 font-open-sans">
+    <section id="programs" className="bg-slate-50 py-12 font-open-sans scroll-mt-16 sm:scroll-mt-20 md:scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         <h3 className="text-2xl font-montserrat">Programs & Services</h3>
         <p className="text-slate-600 mt-1">

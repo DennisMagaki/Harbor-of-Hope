@@ -8,7 +8,7 @@ const events = [
 
 export default function EventsResources() {
   return (
-    <section id="events" className="bg-gradient-to-b from-sky-50 to-white py-12 font-open-sans">
+    <section id="events" className="bg-gradient-to-b from-sky-50 to-white py-12 font-open-sans scroll-mt-16 sm:scroll-mt-20 md:scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
         <div>
           <h3 className="text-2xl font-montserrat">Upcoming Events</h3>

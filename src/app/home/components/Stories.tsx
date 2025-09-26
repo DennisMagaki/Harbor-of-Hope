@@ -2,7 +2,7 @@
 
 export default function Stories() {
   return (
-    <section id="stories" className="max-w-7xl mx-auto px-6 py-12 font-open-sans">
+    <section id="stories" className="max-w-7xl mx-auto px-6 py-12 font-open-sans scroll-mt-16 sm:scroll-mt-20 md:scroll-mt-24">
       <h3 className="text-2xl font-montserrat">Stories of Hope</h3>
       <p className="text-slate-600 mt-1">
         Real people. Real recovery. Hear from members of our community.

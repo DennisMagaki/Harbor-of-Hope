@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12 font-open-sans">
+    <section id="about" className="max-w-7xl mx-auto px-6 py-12 font-open-sans scroll-mt-16 sm:scroll-mt-20 md:scroll-mt-24">
       {" "}
       <div className="grid md:grid-cols-3 gap-8 items-center">
         {" "}

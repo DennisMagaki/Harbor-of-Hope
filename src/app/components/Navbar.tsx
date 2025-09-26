@@ -21,10 +21,10 @@ export default function Navbar() {
   if (pathname === "/") return null;
 
   const navLinks = [
+    { label: "About Us", href: "#about" },
     { label: "Programs", href: "#programs" },
-    { label: "Stories", href: "/stories" },
-    { label: "Events", href: "/events" },
-    { label: "Resources", href: "/resources" },
+    { label: "Stories", href: "#stories" },
+    { label: "Events & Resources", href: "#events" },
     { label: "Get Help", href: "/donate", variant: "primary" },
   ];
 
