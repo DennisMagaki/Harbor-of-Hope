@@ -10,16 +10,16 @@ export default function Navbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  if (pathname === "/") return null;
 
-  // Detect scroll
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10); // add background after 10px scroll
+      setIsScrolled(window.scrollY > 10); 
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (pathname === "/") return null;
 
   const navLinks = [
     { label: "Programs", href: "/programs" },
